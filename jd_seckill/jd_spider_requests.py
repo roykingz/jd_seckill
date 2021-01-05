@@ -404,8 +404,9 @@ class JdSeckill(object):
             if not self.qrlogin.is_login:
                 logger.info("{0} 需登陆后调用，开始扫码登陆".format(func.__name__))
                 self.login_by_qrcode()
-            if not self.jd_tdufp.is_init:
-                self.jd_tdufp.init_jd_tdudfp()
+            # modified by rczhang
+            #if not self.jd_tdufp.is_init:
+            #    self.jd_tdufp.init_jd_tdudfp()
             return func(self, *args, **kwargs)
         return new_func
 
